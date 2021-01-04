@@ -18,41 +18,51 @@ else if(randomNumber==2){
 else {
     return 'paper';
 }
-
+//Assign the value of computerPlay() to the variable computerSelection, which will store the computer's choice.
             }
-            let computerSelection = computerPlay();
+            let computerScore = 0; 
+let playerScore = 0;
             function game(){
-           let computerWin = 0;
-           let playerWin = 0;
-            function playRound(){
-                let playerSelection=prompt('Rock, paper, or scissors?',"");
-                if (computerWin>playerWin && computerWin+playerWin == 5){
-                    return('I win!')
-                }
-                else if(playerWin>computerWin && computerWin+playerWin ==5){
-                    return('You win!')
-                }
-            else if(playerSelection==computerSelection){
-            return 'looks like a tie, we both picked ' + computerSelection ;
-            }
-            else if(computerSelection=='paper' && playerSelection=='rock'||computerSelection=='rock' && playerSelection=='scissors'||
-            computerSelection=='scissors'&& playerSelection=="paper"){
-                return 'I win! '+computerSelection+' beats ' + playerSelection , computerWin++;
 
-            }
-            else if(computerSelection=='rock'&& playerSelection =='paper'|| computerSelection=='paper'&& playerSelection=='scissors'||
-            computerSelection=='scissors'&& playerSelection=='rock'){
-                return " You win." + playerSelection + ' beats ' + computerSelection  , playerWin++;
-            }
-            else{
-                return('Please enter rock, paper, or scissors.') }}
-                console.log(playRound())
-        
-            }
-        
-    
-      console.log(game())
+  //In each round, the player receives a prompt to enter rock paper or scissors, and their answer is converted to lower case.
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  console.log(playRound());
+  if(computerScore + playerScore == 5 && computerScore>playerScore){
+         return('Looks like the machines win this one,better luck next time!')
+    }
+    else if(playerScore + playerScore == 5){
+          return 'Good job, you won!'
+    }
+    else{
+        return ('Looks like a tie, rematch?')
+    }
+    }
+  function playRound(){
+    let computerSelection = computerPlay()
+    let playerSelection = prompt('Input your choice here:','');
+    playerSelection = playerSelection.toLowerCase();
 
+  
+     if (playerSelection == computerSelection){
+    return 'It\'s a tie!, no one gets a point.'}
+   else if (playerSelection =='scissors' && computerSelection =='paper' || playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection =='paper' &&
+   computerSelection == 'rock'){
+       return `Great Job! ${++playerScore} points for the good guys! ${playerSelection} beats ${computerSelection}`
+    }
+else if(computerSelection == 'rock' & playerSelection == 'scissors' || computerSelection == 'paper' && playerSelection == 'rock'
+|| computerSelection =='scissors' && playerSelection == 'paper'){
+return `And the machines have ${++computerScore} points, ${computerSelection} beats ${playerSelection}`
+}
+else{
+    return 'error'
+}
+  }
+  // The computer's answer is compared to the player's anwer, and if the computer wins a message is printed out saying so.
+  //If none of the consitions are met, than the player must not have inputted what he was supposed to, and an error message shows.
+console.log(game())
 
         </script>
     </body>
