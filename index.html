@@ -34,7 +34,7 @@ let playerScore = 0;
          return(`Looks like the machines win this one ${computerScore} to ${playerScore},better luck next time!`)
     }
     else if(playerScore>computerScore){
-          return `Good job, you won! You beat the computer ${playerScore}points to ${computerScore} points`
+          return `Good job, you won! You beat the computer ${playerScore} points to ${computerScore} points`
     }
     else{
         return (`Looks like a tie,both parties ended with ${computerScore} points. rematch?`)
@@ -48,12 +48,13 @@ let playerScore = 0;
   
      if (playerSelection == computerSelection){
     return 'It\'s a tie!, no one gets a point.'}
-   else if (playerSelection =='scissors' && computerSelection =='paper' || playerSelection == 'rock' && computerSelection == 'scissors' || playerSelection =='paper' &&
-   computerSelection == 'rock'){
+   else if (playerSelection =='scissors' && computerSelection =='paper' || playerSelection == 'rock'
+         && computerSelection == 'scissors' || playerSelection =='paper' &&
+         computerSelection == 'rock'){
        return `Great Job! ${++playerScore} points for the good guys! ${playerSelection} beats ${computerSelection}`
     }
 else if(computerSelection == 'rock' & playerSelection == 'scissors' || computerSelection == 'paper' && playerSelection == 'rock'
-|| computerSelection =='scissors' && playerSelection == 'paper'){
+            || computerSelection =='scissors' && playerSelection == 'paper'){
 return `And the machines have ${++computerScore} points, ${computerSelection} beats ${playerSelection}`
 }
 else{
