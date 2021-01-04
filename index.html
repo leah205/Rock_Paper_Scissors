@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper scissors</title>
+    </head>
+    <body>
+        <script>
+            //make a function computerPlay that randomly returns rock paper or scissors.
+            
+            function computerPlay(){
+                let randomNumber = Math.floor(Math.random()*3+1);
+if(randomNumber==1){
+    return 'scissors';
+}
+else if(randomNumber==2){
+    return 'rock';
+}
+else {
+    return 'paper';
+}
+
+            }
+            let computerSelection = computerPlay();
+            function game(){
+           let computerWin = 0;
+           let playerWin = 0;
+            function playRound(){
+                let playerSelection=prompt('Rock, paper, or scissors?',"");
+                if (computerWin>playerWin && computerWin+playerWin == 5){
+                    return('I win!')
+                }
+                else if(playerWin>computerWin && computerWin+playerWin ==5){
+                    return('You win!')
+                }
+            else if(playerSelection==computerSelection){
+            return 'looks like a tie, we both picked ' + computerSelection ;
+            }
+            else if(computerSelection=='paper' && playerSelection=='rock'||computerSelection=='rock' && playerSelection=='scissors'||
+            computerSelection=='scissors'&& playerSelection=="paper"){
+                return 'I win! '+computerSelection+' beats ' + playerSelection , computerWin++;
+
+            }
+            else if(computerSelection=='rock'&& playerSelection =='paper'|| computerSelection=='paper'&& playerSelection=='scissors'||
+            computerSelection=='scissors'&& playerSelection=='rock'){
+                return " You win." + playerSelection + ' beats ' + computerSelection  , playerWin++;
+            }
+            else{
+                return('Please enter rock, paper, or scissors.') }}
+                console.log(playRound())
+        
+            }
+        
+    
+      console.log(game())
+
+
+        </script>
+    </body>
+</html>
