@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper scissors</title>
+        <style src = 'two.css' ></style>
+    </head>
+    <body>
+     <button id='rock'>Rock</button>
+     <button id='paper'>Paper</button>
+     <button id='scissors'>Scissors</button><br>
+     <div></div>
+     <script>
+        
+        
+         
+
+            function computerPlay(){
+                let randomNumber = Math.floor(Math.random()*3+1);
+if(randomNumber==1){
+    return 'scissors';
+}
+else if(randomNumber==2){
+    return 'rock';
+}
+else {
+    return 'paper';
+}
+
+            }
+            let computerScore = 0; 
+let playerScore = 0;
+        
+  function playRound(){
+    let computerSelection = computerPlay()
+
+  
+     if (playerSelection == computerSelection){
+    return 'It\'s a tie!, no one gets a point.'}
+   else if (playerSelection =='scissors' && computerSelection =='paper' || playerSelection == 'rock'
+         && computerSelection == 'scissors' || playerSelection =='paper' &&
+         computerSelection == 'rock'){
+       return `Great Job! ${++playerScore} points for the good guys! ${playerSelection} beats ${computerSelection}`
+    }
+else if(computerSelection == 'rock' & playerSelection == 'scissors' || computerSelection == 'paper' && playerSelection == 'rock'
+            || computerSelection =='scissors' && playerSelection == 'paper'){
+return `And the machines have ${++computerScore} points, ${computerSelection} beats ${playerSelection}`
+}
+else{
+    return 'error'
+}
+  }
+const div = document.querySelector('div');
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach((button)=>{
+    button.addEventListener('click',()=>{
+        playerSelection = button.id;
+    div.textContent = playRound();
+    })
+  })
+
+        </script>
+    </body>
+</html>
