@@ -1,0 +1,32 @@
+div{
+    margin-left: 40%;
+    margin-top: 10vh;
+    font-size: 1.5em;
+    margin-left: auto;
+    text-align: center;
+    
+}
+
+
+button{
+    background: lightsteelblue;
+    width: 10%;
+    height: 20vh;
+    border-radius: 20%;  
+     
+}
+button:hover{
+
+background: pink;
+}
+img{
+    max-width: 10vw;
+    max-height: 10vh;
+}
+body{
+    background: black;
+    font-family: 'Hachi Maru Pop';
+    color: white;
+    text-align: center;
+}
+
